@@ -31,13 +31,6 @@ Name | Type | Description
 ```json
 {
 	"object": "invoice",
-	"customer": {
-		"object": "customer",
-		"id": "CUSTOMER_TOKEN",
-		"name": "John Doe",
-		"email": "test@example.com",
-		"created": 1410196576
-	},
 	"id": "INVOICE_TOKEN",
 	"order_number": 1,
 	"billing_address": {
@@ -84,6 +77,96 @@ Name | Type | Description
 			}
 		],
 		"count": 2
+	},
+	"customer": {
+		"object": "customer",
+		"id": "CUSTOMER_TOKEN",
+		"name": "John Doe",
+		"email": "test@example.com",
+		"created": 1410196576,
+		"space": {
+			"object": "space",
+			"id": 1,
+			"created": 1410196557,
+			"url": "https://spaces.pe/s/EXAMPLE"
+		}
+	}
+}
+```
+
+Retrieve an invoice
+-------------------
+Returns a specified invoice. The invoice id is unique among all Spaces for a user.
+
+### Example request
+
+	$ curl https://spaces.com/api/v1/invoices/INVOICE_TOKEN \
+		-u ACCESS_TOKEN:
+
+### Example response
+
+```json
+{
+	"object": "invoice",
+	"id": "INVOICE_TOKEN",
+	"order_number": 1,
+	"billing_address": {
+		"line_1": "SpaceX",
+		"line_2": "1 Rocket Rd",
+		"line_3": "",
+		"zip_code": "90250",
+		"locality": "Hawthorne",
+		"region": "CA",
+		"country":"US"
+	},
+	"shipping_address": null,
+	"created": 1410196576,
+	"paid": false,
+	"shipped": false,
+	"shipping_details": null,
+	"total": 1200,
+	"currency": "USD",
+	"items": {
+		"data": [
+			{
+				"object": "invoice_item",
+				"item_id": "100100",
+				"description": "Product 1",
+				"quantity": 1,
+				"discount": 0,
+				"unit_amount": 1200,
+				"total_amount": 1200,
+				"currency": "USD",
+				"date_range_start": null,
+				"date_range_end": null
+			},
+			{
+				"object": "invoice_item",
+				"item_id": 101,
+				"description": "Domestic shipping",
+				"quantity": 1,
+				"discount": 0,
+				"unit_amount": 1000,
+				"total_amount": 1000,
+				"currency": "USD",
+				"date_range_start": null,
+				"date_range_end": null
+			}
+		],
+		"count": 2
+	},
+	"customer": {
+		"object": "customer",
+		"id": "CUSTOMER_TOKEN",
+		"name": "John Doe",
+		"email": "test@example.com",
+		"created": 1410196576,
+		"space": {
+			"object": "space",
+			"id": 1,
+			"created": 1410196557,
+			"url": "https://spaces.pe/s/EXAMPLE"
+		}
 	}
 }
 ```
@@ -106,13 +189,6 @@ Returns a list of all invoices.
 	"data": [
 		{
 			"object": "invoice",
-			"customer": {
-				"object": "customer",
-				"id": "CUSTOMER_TOKEN",
-				"name": "John Doe",
-				"email": "test@example.com",
-				"created": 1410196576
-			},
 			"id": "INVOICE_TOKEN",
 			"order_number": 1,
 			"billing_address": {
@@ -159,6 +235,19 @@ Returns a list of all invoices.
 					}
 				],
 				"count": 2
+			}
+		},
+		"customer": {
+			"object": "customer",
+			"id": "CUSTOMER_TOKEN",
+			"name": "John Doe",
+			"email": "test@example.com",
+			"created": 1410196576,
+			"space": {
+				"object": "space",
+				"id": 1,
+				"created": 1410196557,
+				"url": "https://spaces.pe/s/EXAMPLE"
 			}
 		},
 		{...}

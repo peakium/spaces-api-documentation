@@ -42,6 +42,7 @@ Event | Description
 **invoice.created** | An invoice has been created.
 **invoice.paid** | An invoice has been paid.
 **subscription.created** | A subscription has been created.
+**captured_email.created** | An email has been captured through a capture email section.
 
 
 List all events

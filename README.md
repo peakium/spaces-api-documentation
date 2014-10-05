@@ -6,11 +6,13 @@ The Spaces API is build on REST principles with resource-oriented URL's. The API
 API Endpoints
 -------------
 * [Account](/sections/account.md)
+* [Captured Email](/sections/captured_email.md)
 * [Customer](/sections/customer.md)
 * [Event](/sections/event.md)
 * [Invoice](/sections/invoice.md)
 * [Subscription](/sections/subscription.md)
 * [Webhook](/sections/webhook.md)
+* [Space](/sections/space.md)
 * [Resource Subscription](/sections/resource_subscription.md)
 
 Authentication

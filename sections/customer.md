@@ -15,6 +15,7 @@ Name | Type | Description
 **name** | string |
 **email** | string |
 **created** | integer |
+**space** | object |
 
 
 ### Example
@@ -25,13 +26,19 @@ Name | Type | Description
 	"id": "CUSTOMER_TOKEN",
 	"name": "John Doe",
 	"email": "test@example.com",
-	"created": 1410196557
+	"created": 1410196557,
+	"space": {
+		"object": "space",
+		"id": 1,
+		"created": 1410196557,
+		"url": "https://spaces.pe/s/EXAMPLE"
+	}
 }
 ```
 
 Retreive a customer
 ------------------
-Returns a specified customer. The customer token is unique among all Spaces for a user.
+Returns a specified customer. The customer id is unique among all Spaces for a user.
 
 ### Example request
 
@@ -46,7 +53,13 @@ Returns a specified customer. The customer token is unique among all Spaces for 
 	"id": "CUSTOMER_TOKEN",
 	"name": "John Doe",
 	"email": "test@example.com",
-	"created": 1410196557
+	"created": 1410196557,
+	"space": {
+		"object": "space",
+		"id": 1,
+		"created": 1410196557,
+		"url": "https://spaces.pe/s/EXAMPLE"
+	}
 }
 ```
 
@@ -72,7 +85,13 @@ Returns a list of all customers.
 			"id": "CUSTOMER_TOKEN",
 			"name": "John Doe",
 			"email": "test@example.com",
-			"created": 1410196557
+			"created": 1410196557,
+			"space": {
+				"object": "space",
+				"id": 1,
+				"created": 1410196557,
+				"url": "https://spaces.pe/s/EXAMPLE"
+			}
 		},
 		{...}
 	]

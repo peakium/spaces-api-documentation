@@ -57,16 +57,22 @@ Name | Type | Description
 	"currency": "USD",
 	"customer": {
 		"object": "customer",
-		"token": "CUSTOMER_TOKEN",
+		"id": "CUSTOMER_TOKEN",
 		"name": "John Doe",
 		"email": "test@example.com",
-		"created": 1410196578
+		"created": 1410196576,
+		"space": {
+			"object": "space",
+			"id": 1,
+			"created": 1410196557,
+			"url": "https://spaces.pe/s/EXAMPLE"
+		}
 	}
 }
 ```
 
 Retrieve a subscription
---------------------------------
+-----------------------
 To retrieve a specific subscription resource, you need to use the [Customer](/sections/customer.md) resource for the subscription in the URI.
 
 ### Example request
@@ -110,10 +116,16 @@ To retrieve a specific subscription resource, you need to use the [Customer](/se
 	"currency": "USD",
 	"customer": {
 		"object": "customer",
-		"token": "CUSTOMER_TOKEN",
+		"id": "CUSTOMER_TOKEN",
 		"name": "John Doe",
 		"email": "test@example.com",
-		"created": 1410196578
+		"created": 1410196576,
+		"space": {
+			"object": "space",
+			"id": 1,
+			"created": 1410196557,
+			"url": "https://spaces.pe/s/EXAMPLE"
+		}
 	}
 }
 ```
@@ -167,10 +179,16 @@ Returns a list of all subscriptions.
 			"currency": "USD",
 			"customer": {
 				"object": "customer",
-				"token": "CUSTOMER_TOKEN",
+				"id": "CUSTOMER_TOKEN",
 				"name": "John Doe",
 				"email": "test@example.com",
-				"created": 1410196578
+				"created": 1410196576,
+				"space": {
+					"object": "space",
+					"id": 1,
+					"created": 1410196557,
+					"url": "https://spaces.pe/s/EXAMPLE"
+				}
 			}
 		},
 		{...}
